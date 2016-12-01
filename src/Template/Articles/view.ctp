@@ -26,10 +26,10 @@
             <th scope="row"><?= __('Matrícula') ?></th>
             <td><?= $this->Number->format($article->matricula) ?></td>
         </tr>
-        <tr>
+        <!-- <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($article->id) ?></td>
-        </tr>
+        </tr> -->
         <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($article->created) ?></td>
