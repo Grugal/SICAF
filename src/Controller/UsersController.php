@@ -29,10 +29,13 @@ class UsersController extends AppController
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
+        $this->set('title', 'Usuários');
+
     }
 
     public function login()
-    {
+    {   
+        $this->set('title', 'Usuários');
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
@@ -46,6 +49,7 @@ class UsersController extends AppController
     public function logout()
     {
         return $this->redirect($this->Auth->logout());
+        $this->set('title', 'Usuários');
     }
 
     /**
@@ -62,6 +66,7 @@ class UsersController extends AppController
         ]);
 
         $this->set('user', $user);
+        $this->set('title', 'Usuários');
         $this->set('_serialize', ['user']);
     }
 
@@ -85,6 +90,7 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+        $this->set('title', 'Usuários');
     }
 
     /**
@@ -111,6 +117,7 @@ class UsersController extends AppController
         }
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+        $this->set('title', 'Usuários');
     }
 
     /**
@@ -121,7 +128,8 @@ class UsersController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
-    {
+    {   
+        $this->set('title', 'Usuários');
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {

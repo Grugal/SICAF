@@ -20,6 +20,7 @@ class ArticlesController extends AppController
     {
         $articles = $this->paginate($this->Articles);
 
+        $this->set('title', 'Requerimentos');
         $this->set(compact('articles'));
         $this->set('_serialize', ['articles']);
     }
@@ -52,6 +53,7 @@ class ArticlesController extends AppController
         ]);
 
         $this->set('article', $article);
+        $this->set('title', 'Requerimentos');
         $this->set('_serialize', ['article']);
     }
 
@@ -69,11 +71,11 @@ class ArticlesController extends AppController
             $article->user_id = $this->Auth->user('id');
 
             if ($this->Articles->save($article)) {
-                $this->Flash->success(__('Your article has been saved.'));
+                $this->Flash->success(__('SEU REQUERIMENTO FOI SALVO COM SUCESSO!'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The article could not be saved. Please, try again.'));
+                $this->Flash->error(__('O REQUERIMENTO NÃO PÔDE SER SALVO, TENTE NOVAMENTE!'));
             }
         }
 
@@ -81,6 +83,7 @@ class ArticlesController extends AppController
         $this->set(compact('categories'));
         $this->set(compact('article'));
 
+        $this->set('title', 'Requerimentos');
         $this->set('_serialize', ['article']);        
     }
 
@@ -99,15 +102,16 @@ class ArticlesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $article = $this->Articles->patchEntity($article, $this->request->data);
             if ($this->Articles->save($article)) {
-                $this->Flash->success(__('The article has been saved.'));
+                $this->Flash->success(__('O REQUERIMENTO FOI ENVIADO.'));
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The article could not be saved. Please, try again.'));
+                $this->Flash->error(__('O REQUERIMENTO NÃO PÔDE SER EDITADO, TENTE NOVAMENTE!'));
             }
         }
         $this->set(compact('article'));
         $this->set('_serialize', ['article']);
+        $this->set('title', 'Requerimentos');
     }
 
     /**
@@ -124,9 +128,10 @@ class ArticlesController extends AppController
         if ($this->Articles->delete($article)) {
             $this->Flash->success(__('The article has been deleted.'));
         } else {
-            $this->Flash->error(__('The article could not be deleted. Please, try again.'));
+            $this->Flash->error(__('O REQUERIMENTO NÃO PÔDE SER DELETADO, TENTE NOVAMENTE!'));
         }
 
         return $this->redirect(['action' => 'index']);
+        $this->set('title', 'Requerimentos');
     }
 }

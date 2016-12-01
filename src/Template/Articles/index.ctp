@@ -1,11 +1,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Article'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Novo Requerimento'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="articles index large-9 medium-8 columns content">
-    <h3><?= __('Articles') ?></h3>
+    <h3><?= __('Requerimentos') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

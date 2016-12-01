@@ -16,7 +16,9 @@
             echo $this->Form->input('turno');
             echo $this->Form->input('periodo');
             echo $this->Form->input('matricula');
-            echo $this->Form->input('body', ['rows' => '3']);
+            echo $this->Form->input('cpf');
+            echo $this->Form->input('rg');
+            echo $this->Form->input('justificativa', ['rows' => '3']);
             echo $this->Form->button(__('Salvar Requerimento'));
             echo $this->Form->end();
         ?>
