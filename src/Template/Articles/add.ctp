@@ -14,6 +14,7 @@
             echo $this->Form->input('category_id');
             echo $this->Form->input('aluno');
             echo $this->Form->input('turno');
+            echo $this->Form->input('campus');
             echo $this->Form->input('periodo');
             echo $this->Form->input('matricula');
             echo $this->Form->input('cpf');

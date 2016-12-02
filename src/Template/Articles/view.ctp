@@ -19,6 +19,10 @@
             <td><?= h($article->turno) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Campus') ?></th>
+            <td><?= h($article->campus) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Período') ?></th>
             <td><?= h($article->periodo) ?></td>
         </tr>
@@ -39,16 +43,16 @@
             <td><?= $this->Number->format($article->id) ?></td>
         </tr> -->
         <tr>
-            <th scope="row"><?= __('Created') ?></th>
+            <th scope="row"><?= __('Criado Em') ?></th>
             <td><?= h($article->created) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Modified') ?></th>
+            <th scope="row"><?= __('Modficado Em') ?></th>
             <td><?= h($article->modified) ?></td>
         </tr>
     </table>
     <div class="row">
-        <h4><?= __('Justificativa') ?></h4>
+        <h4><?= __('Justificativa de Falta') ?></h4>
         <?= $this->Text->autoParagraph(h($article->justificativa)); ?>
     </div>
 </div>

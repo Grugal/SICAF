@@ -11,6 +11,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('aluno') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('campus') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -21,6 +22,7 @@
             <tr>
                 <td><?= $this->Number->format($article->id) ?></td>
                 <td><?= h($article->aluno) ?></td>
+                <td><?= h($article->campus) ?></td>
                 <td><?= h($article->created) ?></td>
                 <td><?= h($article->modified) ?></td>
                 <td class="actions">
