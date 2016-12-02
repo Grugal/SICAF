@@ -34,9 +34,11 @@ class UsersController extends AppController
     }
 
     public function login()
-    {   
+    {
         $this->set('title', 'Usuários');
-        if ($this->request->is('post')) {
+        if($this->request->session()->read ('Auth.User')) {
+            return $this->redirect($this->Auth->redirectUrl());
+        } else if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
@@ -128,7 +130,7 @@ class UsersController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
-    {   
+    {
         $this->set('title', 'Usuários');
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);

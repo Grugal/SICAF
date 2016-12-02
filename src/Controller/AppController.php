@@ -49,9 +49,8 @@ class AppController extends Controller
                 'action' => 'index'
                 ],
                 'loggoutRedirect' => [
-                    'controller' => 'Pages',
-                    'action' => 'display',
-                    'home'
+                    'controller' => 'Users',
+                    'action' => 'login'
                 ]
         ]);
     }
@@ -82,7 +81,7 @@ class AppController extends Controller
         // Admin can access every action
         if (isset($user['role']) && $user['role'] === 'admin'){
             return true;
-        } 
+        }
 
         // Default deny
         return false;

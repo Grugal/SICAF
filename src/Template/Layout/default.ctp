@@ -45,6 +45,22 @@ if (isset($title)) {
         </ul>
         <div class="top-bar-section">
             <ul class="right">
+                <?php
+                $loguser = $this->request->session()->read ('Auth.User');
+                if($loguser) {
+                    $user = $loguser['username'];
+                    ?>
+                    <li class="logout right"><a class="logout" href="users/logout">Sair</a></li>
+                    <li class="left"><a href="#">Bem vindo(a), <b><?= $user ?></b>!!</a></li>
+                    <?php
+                } else {
+                    ?>
+                    <li class="login right"><a class="login" href="/">Entrar</a></li>
+
+                    <?php
+                }
+                ?>
+                <!-- <li><a target="_blank" href="http://book.cakephp.org/3.0/">Logout</a></li> -->
                 <li><a target="_blank" href="http://book.cakephp.org/3.0/">Documentation</a></li>
                 <li><a target="_blank" href="http://api.cakephp.org/3.0/">API</a></li>
             </ul>
