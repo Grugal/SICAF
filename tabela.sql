@@ -25,7 +25,6 @@ DROP TABLE IF EXISTS `articles`;
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
-  `body` text NOT NULL,
   `category_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
@@ -34,8 +33,12 @@ CREATE TABLE `articles` (
   `turno` varchar(5) NOT NULL,
   `periodo` varchar(12) NOT NULL,
   `matricula` varchar(20) NOT NULL,
+  `cpf` varchar(11) NOT NULL,
+  `rg` varchar(7) NOT NULL,
+  `justificativa` text NOT NULL,
+  `campus` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +47,7 @@ CREATE TABLE `articles` (
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` VALUES (1,'test','um teste qualquer',0,'2016-11-24 15:18:14','2016-11-24 15:18:14',1,'','','',''),(12,'','mais um teste pra validação',1,'2016-12-01 12:52:25','2016-12-01 12:52:25',3,'Adauto','Manhã','3º',''),(18,'','hue',1,'2016-12-01 16:08:20','2016-12-01 16:08:20',1,'Alexandre Henrique','Tarde','2º','20152infig0030'),(19,'','Teste de envio de formulário',1,'2016-12-01 16:20:13','2016-12-01 16:20:13',2,'Odin Miguel','Tarde','2º','20152infig0260');
+INSERT INTO `articles` VALUES (22,'',1,'2016-12-01 19:13:49','2016-12-02 11:24:47',2,'Sérgio Bandeira','Manhã','3º','20151infig0180','09278694460','7333544','Justificando previamente a ausência do dia 02/12/2016, pois irei fazer uma cirurgia na gengiva no horário de aula. Apresentarei o atestado médico ao retornar ao curso.','Igarassu'),(27,'',1,'2016-12-02 11:23:02','2016-12-02 11:23:02',5,'Adauto','manha','3º','20151infig0326','11309763437','9335551','Aviso previamente a falta no dia 07/12/2016 pois estarei em consulta médica. Apresentarei o atestado médico na volta.','Igarassu');
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +122,7 @@ CREATE TABLE `users` (
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -128,7 +131,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Grugal','$2y$10$/QJTB6doBfmMh7OwIzFSOO..uK/tcUhUSUOHCxNoEkNUt3AyAZ/Ki','Admin','2016-11-24 15:15:42','2016-11-24 15:15:42'),(2,'Ravac','$2y$10$8us.UEm2XNrqG3Pjio15geowNlFYzdp2pV.TEX3WnbhDm42KHOoqS','Admin','2016-11-24 18:44:37','2016-11-24 18:44:37'),(3,'Adauto','$2y$10$wyWi6pdBXE5.Zw2EWj03wOjc6Yid8cWB6FKaAgLs7n6iMVu5rdxqm','Author','2016-12-01 12:05:40','2016-12-01 12:05:40'),(4,'Teste','$2y$10$KGu/PgtT3bCpecr1n7YAB.64GRNdBbjaOjgrCk/AksgetZ50oB0.C','Aluno','2016-12-01 13:30:31','2016-12-01 13:30:31');
+INSERT INTO `users` VALUES (1,'Grugal','$2y$10$/QJTB6doBfmMh7OwIzFSOO..uK/tcUhUSUOHCxNoEkNUt3AyAZ/Ki','Admin','2016-11-24 15:15:42','2016-11-24 15:15:42'),(3,'Adauto','$2y$10$wyWi6pdBXE5.Zw2EWj03wOjc6Yid8cWB6FKaAgLs7n6iMVu5rdxqm','Author','2016-12-01 12:05:40','2016-12-01 12:05:40'),(4,'Banser','$2y$10$xpfMfLBM9iKVyce5qEzJ.e/69nUMGQstcOI02Eu14MW2C0JqEH0Py','Aluno','2016-12-01 13:30:31','2016-12-01 19:17:24'),(5,'Angela','$2y$10$tcSGclEw/FByMYIN1IB5iOG8AomYwjAIqyn006BdrOaIgobCNXhQi','Admin','2016-12-01 19:43:47','2016-12-01 19:43:47'),(6,'serumaninho','$2y$10$W7JnCL93dgp8tyh9ZW5zEOpSI4c6C.b4cuXYwg6ufs5uKq3WfoF4a','Admin','2016-12-01 20:00:40','2016-12-01 20:00:40'),(7,'Inacio Neto','$2y$10$kPuoOKQJjKtYkdOAZ1Fy8.55257YPofQHgN4rYO/gWj342WkUqahW','Aluno','2016-12-01 20:07:06','2016-12-01 20:07:06'),(8,'Alexandre','$2y$10$R/T/aeAWqGaZNQ/0vAlwQerEclvJ2hqnWrPyFXVQGPN0WEYqDJRdm','Aluno','2016-12-01 20:11:04','2016-12-01 20:11:04'),(9,'qwertyui','$2y$10$SaVD.ynFdHTkmWb8nTC1wOO0L2dx8syPMNNi0yteTQ7YNJEKVV24S','Aluno','2016-12-01 20:21:25','2016-12-01 20:21:25'),(10,'Diance','$2y$10$wuVdZKPJK.OLcIgv61plmOuykyOcLdyR8gm7bdPBC5IbNBVuAusqS','Aluno','2016-12-01 20:26:35','2016-12-01 20:26:35'),(11,'ramonmsf','$2y$10$CYQ7ddM7fkt5nYVUjcGNlO1KSpQkWGDNewmmrTkAYLF4jMyd23Q7O','Admin','2016-12-02 11:26:33','2016-12-02 11:26:33'),(12,'adsl','$2y$10$6KBL.7XNUM0Ijr2/0AYHheuF48W6CmAPNzeVDAb7fzX8jn9dqhgpe','Admin','2016-12-02 11:33:54','2016-12-02 11:33:54');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -141,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-01 13:54:35
+-- Dump completed on 2016-12-02  9:14:02
