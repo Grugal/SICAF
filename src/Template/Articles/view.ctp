@@ -50,9 +50,12 @@
             <th scope="row"><?= __('Modficado Em') ?></th>
             <td><?= h($article->modified) ?></td>
         </tr>
+            <th scope="row"><?= __('arquivo') ?></th>
+            <td><?= h($article->arquivo) ?></td>
+        </tr>
     </table>
     <div class="row">
         <h4><?= __('Justificativa de Falta') ?></h4>
         <?= $this->Text->autoParagraph(h($article->justificativa)); ?>
     </div>
-</div>
+         </div>

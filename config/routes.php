@@ -56,10 +56,11 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
 
     $routes->connect('/users', ['controller' => 'Users', 'action' => 'index']);
-    $routes->connect('/add', ['controller' => 'Users', 'action' => 'add']);
+    $routes->connect('/cadastro', ['controller' => 'Users', 'action' => 'add']);
     // $routes->connect('/users/view/:nome/:id', ['controller' => 'Users', 'action' => 'view'], ['username' => '\d+', 'pass' => ['username']]);
     $routes->connect('/edit', ['controller' => 'Users', 'action' => 'edit']);
-
+    $routes->connect('/requerimentos', ['controller' => 'articles', 'action' => 'index']);
+    $routes->connect('/novo_requerimento', ['controller' => 'articles', 'action' => 'add']);
     // $routes->connect('/login', ['controller' => 'Users', 'action' => 'login']);
     // 
     // $routes->connect('/login/add', ['controller' => 'Logins', 'action' => 'add']);
