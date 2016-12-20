@@ -51,7 +51,7 @@
             <td><?= h($article->modified) ?></td>
         </tr>
             <th scope="row"><?= __('arquivo') ?></th>
-            <td><?= h($article->arquivo) ?></td>
+            <td><?= h($article->arquivos) ?></td>
         </tr>
     </table>
     <div class="row">

@@ -372,11 +372,11 @@ pre {
 }
 
 .top-bar.expanded .title-area {
-    background: #01545b;
+    background: #304E05;
 }
 
 .top-bar.expanded, .top-bar,.top-bar-section ul li,.top-bar-section li:not(.has-form) a:not(.button) {
-    background: #116d76;
+    background: #11763D;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover {
@@ -393,7 +393,7 @@ pre {
 }
 
 #actions-sidebar {
-    background: #fafafa;
+    background: #f5f5f5;
 }
 
 .index table {
@@ -457,7 +457,7 @@ fieldset legend {
 }
 
 button {
-    background: #966600;
+    background: #29a517;
 }
 
 div.message {

@@ -20,7 +20,7 @@
             echo $this->Form->input('cpf');
             echo $this->Form->input('rg');
             echo $this->Form->input('justificativa', ['rows' => '3']);
-            echo $this->Form->file('arquivo');
+            echo $this->Form->file('arquivos');
             echo $this->Form->button(__('Salvar Requerimento'));
             echo $this->Form->end();
         ?>
